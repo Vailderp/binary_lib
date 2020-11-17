@@ -1,5 +1,6 @@
 # binary_lib
 binary library/reading files
+
 	//Своя кодировка
 	class NUMBER_SYSTEM
 	{
