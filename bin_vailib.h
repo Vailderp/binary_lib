@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <map>
 using namespace std;
 class bin_vailib
 {
@@ -9,17 +10,22 @@ public:
 
 	class NUMBER_SYSTEM
 	{
-		public:
+	public:
 
-			string chars = "0123456789ABCDEF";
-			int len = 16;
-			int bitsy = 4;
+		string chars = "0123456789ABCD;=";
+		string closecharbin = "1110";
+		int len = 16;
+		int bitsy = 4;
 
 	};
 
 	int BinToDec(string bin);
 
-	string DecToBin(int dec); 
+	string DecToBin(int dec);
+
+	string ReadFile(string path);
+
+	void WriteFile(string input, string path);
 
 	string GetBinChar(char c);
 
@@ -27,7 +33,7 @@ public:
 
 	string GetBinFile(string path);
 
-	string SetBinFile(string bin, string path);
+	void SetBinFile(string bin, string path);
 
 	string SetBinString(string bin);
 
@@ -35,4 +41,13 @@ public:
 
 	string GetNSBin(string input, NUMBER_SYSTEM ns);
 
+	map<string, string> ReadConf(string input);
+
+	map<string, string> ReadConfFile(string path);
+
+	string WriteConf(map<string, string> input);
+
+	void WriteConfFile(map<string, string> input, string path);
+	
+	string BeautiferConf(string input);
 };
